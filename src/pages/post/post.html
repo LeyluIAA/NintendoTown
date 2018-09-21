@@ -10,11 +10,9 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  <ion-card *ngFor="let post of posts" (click)="postTapped(post)">
-      <my-image medialink={{post.featured_media}}></my-image>
-    <ion-card-content>
-      <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
-    </ion-card-content>
-  </ion-card>
+  <h1 [innerHtml]="post.title.rendered | safeHtml"></h1>
+  <div class="postDate"><ion-icon name="time"></ion-icon>{{ post.date | displayDate }}</div>
+  <div [innerHtml]="post.content.rendered | safeHtml"></div>
 </ion-content>
