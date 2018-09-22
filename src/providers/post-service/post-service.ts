@@ -37,4 +37,14 @@ export class PostServiceProvider {
       });
     });
   };
+
+  getAuthorName(authorId) {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl + '/users').subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
 }

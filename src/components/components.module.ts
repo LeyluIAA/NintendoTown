@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { MyImageComponent } from './my-image/my-image';
+import { AuthorComponent } from './author/author';
 @NgModule({
 	declarations: [
-    MyImageComponent],
+    MyImageComponent,
+    AuthorComponent],
 	imports: [],
 	exports: [
-    MyImageComponent]
+    MyImageComponent,
+    AuthorComponent]
 })
 export class ComponentsModule {}

@@ -19,9 +19,11 @@ export class MyImageComponent {
   constructor(public PostServiceProvider: PostServiceProvider) {}
   
   ngOnInit() {
+    let result: any = {};
     this.PostServiceProvider.getMainIMG(this.medialink)
     .then(data => {
-      this.imgURL = data.guid.rendered;
+      result = data;
+      this.imgURL = result.guid.rendered;
     })
   }
 }
