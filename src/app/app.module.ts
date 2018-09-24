@@ -10,10 +10,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostServiceProvider } from '../providers/post-service/post-service';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MyImageComponent } from '../components/my-image/my-image'
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    MyImageComponent
   ],
   imports: [
     BrowserModule,
