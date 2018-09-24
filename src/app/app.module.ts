@@ -10,15 +10,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostServiceProvider } from '../providers/post-service/post-service';
 import { HttpClientModule } from '@angular/common/http';
 
-import { SafeHtmlPipe} from '../pipes/safe-html/safe-html';
-import { DisplayDatePipe } from '../pipes/display-date/display-date';
-
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    SafeHtmlPipe,
-    DisplayDatePipe
+    HomePage
   ],
   imports: [
     BrowserModule,
