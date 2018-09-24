@@ -5,8 +5,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PostPage } from '../pages/post/post';
-import { MyImageComponent } from '../components/my-image/my-image';
-import { AuthorComponent } from '../components/author/author';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,8 +19,6 @@ import { DisplayDatePipe } from '../pipes/display-date/display-date';
     MyApp,
     HomePage,
     PostPage,
-    MyImageComponent,
-    AuthorComponent,
     SafeHtmlPipe,
     DisplayDatePipe
   ],
