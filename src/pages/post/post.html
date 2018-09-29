@@ -11,7 +11,7 @@
 </ion-header>
 
 <ion-content padding>
-  <my-image medialink={{post.featured_media}}></my-image>
+  <main-image medialink={{post.featured_media}}></main-image>
   <h1 [innerHtml]="post.title.rendered | safeHtml"></h1>
   <div class="postDate"><ion-icon name="time"></ion-icon>{{ post.date | displayDate }}</div>
   <div [innerHtml]="post.content.rendered | safeHtml"></div>

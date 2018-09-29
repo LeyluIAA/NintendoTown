@@ -10,18 +10,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PostServiceProvider } from '../providers/post-service/post-service';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MyImageComponent } from '../components/my-image/my-image'
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    MyImageComponent
+    HomePage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
