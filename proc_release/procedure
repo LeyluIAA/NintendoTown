@@ -1,0 +1,5 @@
+password: nintendo
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-nt.jks /root/NintendoTown/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nintendo
+password: nintendo
+zipalign -v 4 /root/NintendoTown/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk HelloWorld.apk
+curl --upload HelloWorld.apk https://transfer.sh/nintendo_town.apk
