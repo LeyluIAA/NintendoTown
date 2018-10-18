@@ -3,6 +3,8 @@ import { IonicPageModule } from 'ionic-angular';
 import { PostPage } from './post';
 import { ComponentsModule } from '../../components/components.module';
 import { PipesModule } from '../../pipes/pipes.module';
+import { SafeHtmlPipe } from '../../pipes/safe-html/safe-html';
+import { DisplayDatePipe } from '../../pipes/display-date/display-date';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,9 @@ import { PipesModule } from '../../pipes/pipes.module';
   imports: [
     IonicPageModule.forChild(PostPage),
     ComponentsModule,
-    PipesModule
+    PipesModule,
+    SafeHtmlPipe,
+    DisplayDatePipe
   ],
 })
 export class PostPageModule {}

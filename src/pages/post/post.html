@@ -16,3 +16,42 @@
   <div class="postDate"><ion-icon name="time"></ion-icon>{{ post.date | displayDate }}</div>
   <div [innerHtml]="post.content.rendered | safeHtml"></div>
 </ion-content>
+
+<script type="application/javascript" src="//ced.sascdn.com/tag/104/smart.js" async></script>
+<script type="application/javascript">
+if(document.location.pathname == "/")
+cgPageId = 185303; //nintendo-town.fr/hp
+else
+cgPageId = 185304; //nintendo-town.fr/rg
+
+    var sas = sas || {};
+    sas.cmd = sas.cmd || [];
+    sas.cmd.push(function() {
+        sas.setup({ networkid: 104, domain: "//www.smartadserver.com", async: true });
+    });
+    sas.cmd.push(function() {
+        sas.call("onecall", {
+            siteId: 27886,
+            pageId: cgPageId,
+            formatId: "32325,1391,920,19175,922,19176",
+            target: ''
+        });
+    });
+</script>
+
+
+<!-- pub en bas de chaque article -->
+<div id="sas_32325"></div>
+<script type="application/javascript">
+    sas.cmd.push(function() {
+        sas.render("32325");  // Ad Control
+    });
+</script>
+
+
+<div id="sas_1391"></div>
+<script type="application/javascript">
+    sas.cmd.push(function() {
+        sas.render("1391");  // Habillage
+    });
+</script>

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { PostPage } from '../pages/post/post';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,22 +12,26 @@ import { PostServiceProvider } from '../providers/post-service/post-service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ComponentsModule } from '../components/components.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    PostPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    PostPage
   ],
   providers: [
     StatusBar,
