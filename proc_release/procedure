@@ -1,3 +1,4 @@
+ionic cordova build android --prod --release
 password: nintendo
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore release-nt.jks /root/NintendoTown/platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk nintendo
 password: nintendo

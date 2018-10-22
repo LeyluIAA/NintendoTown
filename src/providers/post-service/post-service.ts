@@ -38,6 +38,16 @@ export class PostServiceProvider {
     });
   };
 
+  getCategories() {
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'/categories').subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+
   getAuthorName(authorId) {
     return new Promise(resolve => {
       this.http.get(this.apiUrl + '/users').subscribe(data => {
