@@ -11,49 +11,6 @@ import { PostPage } from '../../pages/post/post';
 export class HomePage {
   @ViewChild(Nav) nav: Nav;
   posts: any;
-  categories: [
-    {
-        "id": 19,
-        "name": "3DS"
-    },
-    {
-        "id": 220,
-        "name": "3DS"
-    },
-    {
-        "id": 91,
-        "name": "Article"
-    },
-    {
-        "id": 568,
-        "name": "Avis public"
-    },
-    {
-        "id": 14,
-        "name": "C'est Chaud !"
-    },
-    {
-        "id": 25,
-        "name": "Communiqué de presse"
-    },
-    {
-        "id": 22,
-        "name": "Dossier"
-    },
-    {
-        "id": 15,
-        "name": "Economie"
-    },
-    {
-        "id": 168,
-        "name": "Jeux"
-    },
-    {
-        "id": 290,
-        "name": "Mobile"
-    }
-  ]
-
   constructor(public navCtrl: NavController, public PostServiceProvider: PostServiceProvider) {
     this.PostServiceProvider.getPosts()
     .then(data => {

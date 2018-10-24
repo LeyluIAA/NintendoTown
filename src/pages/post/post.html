@@ -11,9 +11,10 @@
 </ion-header>
 
 <ion-content padding>
-  <main-image medialink={{post.featured_media}}></main-image>
-  <h1 [innerHtml]="post.title.rendered | safeHtml"></h1>
-  <div class="postDate"><ion-icon name="time"></ion-icon>{{ post.date | displayDate }}</div>
+    <main-image medialink={{post.featured_media}}></main-image>
+    <h1 [innerHtml]="post.title.rendered | safeHtml"></h1>
+    <div class="postDate"><ion-icon name="time"></ion-icon>{{ post.date | displayDate }}</div>
+    <ion-badge class="badge-post" color="danger" *ngFor="let category of post.categories">{{category | categories}}</ion-badge>
   <div [innerHtml]="post.content.rendered | safeHtml"></div>
 </ion-content>
 
