@@ -1,15 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SafeHtmlPipe } from '../../pipes/safe-html/safe-html';
-import { DisplayDatePipe } from '../../pipes/display-date/display-date';
-//import { DomSanitizer } from '@angular/platform-browser'; 
-
-/**
- * Generated class for the PostPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

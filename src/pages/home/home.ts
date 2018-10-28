@@ -18,6 +18,14 @@ export class HomePage {
     }); 
   }
 
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    this.PostServiceProvider.getPosts()
+      .then(data => {
+        this.posts = data;
+        refresher.complete();
+      });
+  }
   postTapped(post) {
     this.navCtrl.push(PostPage, {
       post: post
