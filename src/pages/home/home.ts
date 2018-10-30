@@ -11,21 +11,48 @@ import { PostPage } from '../../pages/post/post';
 export class HomePage {
   @ViewChild(Nav) nav: Nav;
   posts: any;
+  pageNumber: 1;
   constructor(public navCtrl: NavController, public PostServiceProvider: PostServiceProvider) {
-    this.PostServiceProvider.getPosts()
-    .then(data => {
-      this.posts = data;
-    }); 
+    this.getData(false); 
+  }
+
+  getData(hasToBePushed) {
+    if (!this.pageNumber) {
+      this.pageNumber = 1;
+    }
+    if (hasToBePushed) {
+      this.pageNumber++;
+    }
+
+    return new Promise(resolve => {
+      this.PostServiceProvider.getPosts(this.pageNumber)
+        .then(data => {
+          if (hasToBePushed) {
+            for(let post of data) {
+              this.posts.push(post);
+            }
+          }
+          else {
+            this.posts = data;
+          }
+          resolve(true);
+        });
+    });
   }
 
   doRefresh(refresher) {
-    console.log('Begin async operation', refresher);
-    this.PostServiceProvider.getPosts()
-      .then(data => {
-        this.posts = data;
-        refresher.complete();
-      });
+    this.pageNumber = 1;
+    this.getData(false).then(()=>{
+      refresher.complete();
+    });
   }
+
+  doInfinite(infiniteScroll) {
+    this.getData(true).then(()=>{
+      infiniteScroll.complete();
+    });    
+  }
+
   postTapped(post) {
     this.navCtrl.push(PostPage, {
       post: post

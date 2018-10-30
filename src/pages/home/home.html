@@ -19,8 +19,10 @@
       <main-image medialink={{post.featured_media}}></main-image>
       <ion-card-content>
         <ion-card-title [innerHtml]="post.title.rendered"></ion-card-title>
-        <!--Trouver la balise qui va bien et faire un for dessus pour piper toutes les categories ! -->
         <ion-badge color="danger" *ngFor="let category of post.categories">{{category | categories}}</ion-badge>
       </ion-card-content>
     </ion-card>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Encore plus de Nintendo !"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>

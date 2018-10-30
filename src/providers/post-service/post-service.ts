@@ -17,9 +17,12 @@ export class PostServiceProvider {
   }
 
   /** Get All posts */
-  getPosts() {
+  getPosts(pageNumber) {
+    if (!pageNumber) {
+      pageNumber = 1
+    }
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/posts').subscribe(data => {
+      this.http.get(this.apiUrl + '/posts?page=' + pageNumber).subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);
