@@ -28,9 +28,9 @@ export class HomePage {
       this.PostServiceProvider.getPosts(this.pageNumber)
         .then(data => {
           if (hasToBePushed) {
-            for(let post of data) {
-              this.posts.push(post);
-            }
+            for(var i=0; i < 10; i++) {
+              this.posts.push(data[i]);
+            };
           }
           else {
             this.posts = data;

@@ -9,6 +9,7 @@ export class MainImageComponent {
 
   @Input() medialink: number;
   imgURL: any;
+  mediaType: any;
 
   constructor(public PostServiceProvider: PostServiceProvider) {}
 
@@ -17,6 +18,7 @@ export class MainImageComponent {
     this.PostServiceProvider.getMainIMG(this.medialink)
     .then(data => {
       result = data;
+      this.mediaType = result.media_type;
       this.imgURL = result.guid.rendered;
     })
   }
