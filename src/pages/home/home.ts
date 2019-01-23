@@ -27,17 +27,47 @@ export class HomePage {
     return new Promise(resolve => {
       this.PostServiceProvider.getPosts(this.pageNumber)
         .then(data => {
-          if (hasToBePushed) {
-            for(var i=0; i < 10; i++) {
-              this.posts.push(data[i]);
-            };
-          }
-          else {
-            this.posts = data;
-          }
+          
+          let promise = new Promise(resolve => {
+            data = this.removeTests(data);
+            
+            resolve(data);
+          })
+          
+          promise.then(data => {
+            if (hasToBePushed) {
+              for (let i = 0; i < 10; i++) {
+                this.posts.push(data[i]);
+                if (!data[i+1]) {
+                  break;
+                }
+              }
+            }
+            else {
+              this.posts = data;
+            }
+          })
+          
           resolve(true);
         });
     });
+  }
+
+  removeTests(posts) {
+    const forbiddenNumbers = [2, 8, 115, 95, 90, 20, 6];
+    let postsWithoutTests = posts.filter(post => {      
+      let result = true;
+      post.categories.forEach(category => {        
+        if (forbiddenNumbers.indexOf(category) !== -1) {
+          result = false;
+          return;
+        }      
+      });     
+      return result;  
+    });
+    
+    return postsWithoutTests;
+  
   }
 
   doRefresh(refresher) {

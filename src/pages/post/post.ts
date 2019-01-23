@@ -14,7 +14,5 @@ export class PostPage {
 
   ionViewDidLoad() {
     //this.post.content.renderer = DomSanitizer.byPassSecurityTrustStyle(this.post.content.renderer);  
-    console.log('ionViewDidLoad PostPage');
-    console.log('object post', this.post);
   }
 }

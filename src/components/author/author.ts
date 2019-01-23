@@ -14,7 +14,6 @@ export class AuthorComponent {
   ngOnInit() {
     this.PostServiceProvider.getAuthorName(this.authorId)
     .then(data => {
-      console.log('YEAAAHAHAHAHA', data);
       //this.authorName = data;
     })
   }
