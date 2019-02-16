@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { GoogleAnalyticsOriginal } from '@ionic-native/google-analytics';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -36,7 +37,8 @@ import { PipesModule } from '../pipes/pipes.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PostServiceProvider
+    PostServiceProvider,
+    GoogleAnalyticsOriginal
   ]
 })
 export class AppModule {}

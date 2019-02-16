@@ -3,7 +3,8 @@ import { NavController } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import { PostServiceProvider } from '../../providers/post-service/post-service';
 import { PostPage } from '../../pages/post/post';
-
+import { PageTrack } from '../../decorators/page-track.decorator';
+@PageTrack()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -13,7 +14,7 @@ export class HomePage {
   posts: any;
   pageNumber: 1;
   constructor(public navCtrl: NavController, public PostServiceProvider: PostServiceProvider) {
-    this.getData(false); 
+    this.getData(false);
   }
 
   getData(hasToBePushed) {
