@@ -4,7 +4,7 @@ import { Nav } from 'ionic-angular';
 import { PostServiceProvider } from '../../providers/post-service/post-service';
 import { PostPage } from '../../pages/post/post';
 import { PageTrack } from '../../decorators/page-track.decorator';
-@PageTrack()
+//@PageTrack()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'

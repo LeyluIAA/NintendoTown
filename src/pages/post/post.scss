@@ -1,3 +1,8 @@
+h1 {
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+
 .postDate {
     color: #888;
     font-weight: 500;
@@ -7,10 +12,47 @@
     margin-top: 0.5rem;
 }
 
+p {
+    font-size: 1.5rem;
+    font-weight: 410;
+}
+
 a img, p img {
     width: 100%;
 }
 
 iframe {
     width: 100%;
+}
+
+blockquote {
+    background: #e4e4e4;
+    border-left: 10px solid rgb(146, 146, 146);
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
+
+blockquote p {
+    font-style: italic;
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(78, 149, 241);
+}
+
+a:hover {
+    text-decoration: none;
+    color: #6a3072;
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(107, 107, 107);
 }
