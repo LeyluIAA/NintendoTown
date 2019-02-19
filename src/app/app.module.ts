@@ -37,7 +37,7 @@ import { PipesModule } from '../pipes/pipes.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    PostServiceProvider,
+    PostServiceProvider
     //GoogleAnalyticsOriginal
   ]
 })

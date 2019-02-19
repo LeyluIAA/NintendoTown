@@ -1,19 +1,16 @@
 <ion-header>
   <ion-navbar no-padding color="danger">
       <ion-grid>
-          <ion-row>
-            <!-- <ion-col col-12 text-center>
-              <img src="assets/imgs/logo_nintendo_town.png"  width=100 alt="logo Nintendo-Town"/>
-            </ion-col> -->
-            <!--<h1 margin-left margin-right [innerHtml]="post.title.rendered | safeHtml"></h1>-->
-
+          <ion-row class="header-row">
+            <!--<h1 class="head-title" [innerHtml]="post.title.rendered | safeHtml | ellipsis"></h1>-->
+            <ion-icon padding-right name="share"></ion-icon>
           </ion-row>
         </ion-grid>
   </ion-navbar>
 </ion-header>
 
 <ion-content no-padding>
-    <main-image medialink={{post.featured_media}}></main-image>
+    <img class="img-shadow" src={{post.jetpack_featured_media_url}}/>
     <h1 margin-left margin-right [innerHtml]="post.title.rendered | safeHtml"></h1>
     <div margin-left class="postDate"><ion-icon name="time"></ion-icon>{{ post.date | displayDate }}</div>
     <ion-badge margin-left class="badge-post" color="danger" *ngFor="let category of post.categories">{{category | categories}}</ion-badge>

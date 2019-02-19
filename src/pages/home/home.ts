@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import { PostServiceProvider } from '../../providers/post-service/post-service';
 import { PostPage } from '../../pages/post/post';
-import { PageTrack } from '../../decorators/page-track.decorator';
+//import { PageTrack } from '../../decorators/page-track.decorator';
 //@PageTrack()
 @Component({
   selector: 'page-home',
